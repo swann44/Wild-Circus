@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:replace="nav.html :: nav-bar"></header>
+<div class="login-body">
+    <h1>Inscription à un cours</h1>
+    <div class="login" id="inscription">
+        <form action="/inscription" th:action="@{/inscription}" method="post" th:object="${inscription}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <div class="form-login">
+                <input type="text" id="lastName" name="lastName" placeholder="Nom" th:field="*{lastName}"/>
+                <input type="text" id="firstName" name="firstName" placeholder="Prénom" th:field="*{firstName}"/>
+                <select id="cours_id" required th:field="*{cours.id}">
+                    <option value="0" selected>Sélectionner un cours</option>
+                    <option th:each="cours : ${coursList}" th:value="${cours.id}" th:text="${cours.name}">COURS</option>
+                </select>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Validation</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<!--<form method="post" action="/ordonnance" name="ordonnance-form">
+    <div class="part1Form">
+        <input type="hidden" name="ordonnanceId" th:value="${ordonnance.getId()}">
+        <input class="input1" type="text" name="drug" id="drug" placeholder="Médicament">
+        <input class="input2" type="number" name="takenDay" id="takenDy" placeholder="Prise par jour">
+        <input class="input3" type="number" name="days" id="days" placeholder="Nombre de jours">
+        <input class="input4" type="number" name="inter" id="inter" placeholder="Interval en heure">
+        <input type="hidden" name="creation" value="0" id="input-creation">
+        <textarea name="comment" id="comment" placeholder="Commentaire"></textarea>
+    </div>
+    <div class="ajout">
+        <input type="submit" value="Ajouter un médicament">
+    </div>
+    <div class="part2Button">
+        <input type="submit" value="CREATION" id="creation">
+    </div>
+</form>-->

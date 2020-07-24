@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:fragment="nav-bar">
+    <div class="header1">
+        <h1>Wild Circus</h1>
+        <nav>
+            <ul>
+                <a href="/index">
+                    <li>Accueil</li>
+                </a>
+                <a href="/login">
+                    <li>Connexion</li>
+                </a>
+                <a href="/profil">
+                    <li>Profil</li>
+                </a>
+                <a href="/inscription">
+                    <li sec:authorize="hasRole('ROLE_USER')">Inscription</li>
+                </a>
+                <a href="/logout">
+                    <li>Déconnexion</li>
+                </a>
+            </ul>
+        </nav>
+    </div>
+</header>
+</body>
+</html>
+<li><a href="/profile"><i class="small material-icons">account_circle</i>Profil</a></li>

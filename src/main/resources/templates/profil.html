@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:replace="nav.html :: nav-bar"></header>
+<div class="profil-body">
+    <h1>Profil</h1>
+    <div class="creation-user">
+        <form action="/profil" method="post" th:action="@{/profil}" th:object="${user}">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <input th:field="*{id}" type="hidden">
+            <div class="form-register">
+                <div class="register-pseudo">
+                    <input type="text" id="username" name="username" placeholder="Pseudo" th:field="*{username}"/>
+                    <input type="email" id="email" name="email" placeholder="Email" th:field="*{email}">
+                </div>
+                <div class="register-password">
+                    <input id="password" type="password" class="validate" name="password" placeholder="Mot de passe">
+                    <input id="passwordConfirmation" type="password" class="validate" placeholder="Confirmation mot de passe">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Modification</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <h1>Historique</h1>
+    <div class="tableau-historique">
+        <table>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Cours</th>
+                <th>Tarif</th>
+            </tr>
+            <tr th:each="inscriptions : ${inscription}">
+                <td th:text="${inscriptions.getLastName().substring(0, 1).toUpperCase()+inscriptions.getLastName().substring(1, inscriptions.getLastName().length())}">Kali</td>
+                <td th:text="${inscriptions.getFirstName().substring(0, 1).toUpperCase()+inscriptions.getFirstName().substring(1, inscriptions.getFirstName().length())}">Jouaud</td>
+                <td th:text="${inscriptions.getCours().name}">jonglage</td>
+                <td th:text="${inscriptions.getCours().price}">50</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script>
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("passwordConfirmation");
+
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+</body>
+</html>
+

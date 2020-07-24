@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:replace="nav.html :: nav-bar"></header>
+<div class="header2">
+    <h3>Le cirque Burlesque vous a toujours fait rêver?</h3>
+    <p>Intégrez cet univers en venant prendre des cours avec nous!</p>
+</div>
+<div class="text">
+    <div class="text1">
+        <p>Notre cirque crée en 1900 s'est spécialisé au fil des années dans le burlesque.
+            Ainsi après plus de 120 ans d'expérience, nous avons choisis de partager notre
+            savoir faire. Pour ce fait, nous proposons de participer à des cours sur diverses
+            disciplines</p>
+    </div>
+</div>
+<h2>Notre Circus Family</h2>
+<div class="bloc-photo">
+    <div class="bloc-image1">
+        <img src="/image/image1.jpg" alt="photo de cirque">
+        <p>Joséphine <br>
+            Monocycle</p>
+    </div>
+    <div class="bloc-image2">
+        <img src="/image/image2.jpg" alt="photo de cirque">
+        <p>Prune<br>
+            Cerceau</p>
+    </div>
+    <div class="bloc-image3">
+        <img src="/image/image3.jpg" alt="photo de cirque">
+        <p>Flor<br>
+            Trapèze</p>
+    </div>
+    <div class="bloc-image4">
+        <img src="/image/image4.jpg" alt="photo de cirque">
+        <p>Bérénice<br>
+            Jonglage</p>
+    </div>
+</div>
+<h2 id="tarif">Nos cours</h2>
+<div class="tableau">
+    <table>
+        <tr>
+            <th>Cours</th>
+            <th>Tarif</th>
+        </tr>
+        <tr th:each="cours : ${cours}">
+            <td th:text="${cours.name}">jonglage</td>
+            <td th:text="|${cours.price}€|">50</td>
+        </tr>
+    </table>
+    <div class="commentaire">
+        <p>*Pour réserver des cours vous devez créer un compte</p>
+    </div>
+</div>
+</body>
+</html>

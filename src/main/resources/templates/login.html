@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:replace="nav.html :: nav-bar"></header>
+<div class="login-body">
+    <h1>Connexion</h1>
+    <div class="login">
+        <form th:action="@{/login}" method="post">
+            <div class="form-login">
+                <div th:if="${param.error}" class="alert alert-error">
+                    Pseudo ou mot de passe invalide
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out.
+                </div>
+                <input type="text" id="username" name="username" placeholder="Pseudo"/>
+                <input type="password" id="password" name="password" placeholder="Mot de passe"/>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Connexion</button>
+                </div>
+            </div>
+        </form>
+        <div class="form-actions">
+            <a class="subheader" th:href="@{/register}">
+                <button type="submit" class="btn">Création de Compte</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

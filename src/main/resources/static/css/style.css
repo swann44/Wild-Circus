@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+}
+header {
+    display: flex;
+    flex-direction: column;
+}
+.header1 {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav {
+    width: 60%;
+}
+h1 {
+    width: 40%;
+    margin-left: 2rem;
+    font-size: 3rem;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+h1, ul li {
+    color: white;
+}
+ul li {
+    font-size: 1.5rem;
+    list-style: none;
+}
+ul a {
+    text-decoration: none;
+}
+.header2 {
+    background-image: url("/image/photoHeader_photos_v2_x2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header2 h3 {
+    font-size: 4rem;
+    color: white;
+}
+.header2 p {
+    font-size: 3rem;
+    color: white;
+}
+.text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.text1 {
+    width: 40%;
+    text-align: justify;
+}
+.text1 p {
+    font-size: 2rem;
+}
+.bloc-photo {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+.bloc-photo p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+h2 {
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-left: 0.5rem;
+    font-size: 3rem;
+}
+
+.tableau {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+}
+.tableau table {
+    width: 60%;
+    border-collapse: collapse;
+}
+.commentaire {
+    width: 60%;
+}
+
+.tableau table td, th {
+    border: 1px solid black;
+    font-size: 2rem;
+}
+.tableau table td {
+    text-align: center;
+}
+
+.tableau table th {
+    font-weight: bold;
+}
+.register-body, .login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-image: url("/image/image-login_photos_v2_x2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.register-body h1, .login-body h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: black;
+    margin-bottom: 4rem;
+    margin-top: 0;
+}
+.creation-user {
+    height: 40vh;
+    background-color: white;
+    width: 50%;
+}
+.form-register {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.register-pseudo, .register-password {
+    display: flex;
+    justify-content: space-around;
+}
+.form-register input {
+    width: 15rem;
+    height: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.form-login input {
+    width: 20rem;
+    height: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.register-pseudo {
+    margin-top: 1rem;
+}
+.form-actions button {
+    width: 8rem;
+    height: 3rem;
+    background-color: darkred;
+    color: wheat;
+    border-radius: 10px;
+    border: none;
+}
+.form-login {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+.login {
+    background-color: white;
+    height: 55vh;
+    width: 30%;
+}
+.form-login select {
+    width: 20rem;
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid gainsboro;
+    color: grey;
+}
+#inscription {
+    background-color: white;
+    height: 40vh;
+    width: 30%;
+}
+.profil-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 160vh;
+    background-image: url(/image/cirque.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.profil-body h1 {
+    text-align: center;
+    color: black;
+    font-size: 4rem;
+    margin-top: 5rem;
+}
+.tableau-historique {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+}
+.tableau-historique table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tableau-historique table td, th {
+    border: 1px solid black;
+    font-size: 2rem;
+}
+.tableau-historique table td {
+    text-align: center;
+}
+
+.tableau-historique table th {
+    font-weight: bold;
+}

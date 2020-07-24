@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<header th:replace="nav.html :: nav-bar"></header>
+<div class="register-body">
+    <h1>Création de Compte</h1>
+    <div class="creation-user">
+        <form th:action="@{/register}" method="post">
+            <div class="form-register">
+                <div class="register-pseudo">
+                    <input type="text" id="username" name="username" placeholder="Pseudo"/>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="register-password">
+                    <input id="password" type="password" class="validate" name="password" placeholder="Mot de passe">
+                    <input id="passwordConfirmation" type="password" class="validate" placeholder="Confirmation mot de passe">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Création</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var password = document.getElementById("password")
+        , confirm_password = document.getElementById("passwordConfirmation");
+
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+</body>
+</html>
