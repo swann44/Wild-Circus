@@ -21,6 +21,6 @@ ARG SPRING_MAIL_PASSWORD=${SPRING_MAIL_PASSWORD}
 ENV SPRING_MAIL_PASSWORD=${SPRING_MAIL_PASSWORD}
 FROM openjdk:8-jre-alpine
 WORKDIR /app
-COPY --from=MAVEN_BUILD /build/target/synergieFamily-0.0.1-SNAPSHOT.jar /app/
+COPY --from=MAVEN_BUILD /build/target/wildCircus-0.0.1-SNAPSHOT.jar /app/
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar","-Dspring.profiles.active=prod", "wildCircus-0.0.1-SNAPSHOT.jar"]
